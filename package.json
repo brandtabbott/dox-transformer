@@ -1,5 +1,5 @@
 {
-  "name": "@brandtabbott/dox-transformer",
+  "name": "dox-transformer",
   "version": "1.0.0",
   "description": "Transform dox output into file(s) via a transformer",
   "author": "Brandt A. Abbott",
