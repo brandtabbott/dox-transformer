@@ -1,9 +1,17 @@
 {
   "name": "dox-transformer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Transform dox output into file(s) via a transformer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandtabbott/dox-transformer.git"
+  },
   "author": "Brandt A. Abbott",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brandtabbott/dox-transformer/issues"
+  },
+  "homepage": "https://github.com/brandtabbott/dox-transformer#readme",
   "type": "module",
   "bin": {
     "dox-transformer": "./bin/dox-transformer.js"
