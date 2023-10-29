@@ -1,0 +1,47 @@
+# {{get firstComment.tags "type" "name" "string"}}
+
+{{{firstComment.description.full}}}
+
+{{#if (get firstComment.tags "type" "exampleImportFrom" "string")~}}
+## Example 🚀
+<script setup>import {{get firstComment.tags "type" "name" "string"}} from '{{get firstComment.tags "type" "exampleImportFrom" "string"}}'</script>
+{{#each (filter firstComment.tags "type" "example") as |example|~}}
+::: raw
+{{{example.string}}}
+:::
+
+::: details Code
+```js
+{{{example.string}}}
+```
+:::
+{{/each}}
+{{/if}}
+
+## Properties 🔧
+| Property  | Type | Optional  | Description |
+| --------- | ---- | --------- | ----------- |
+{{#each (filter firstComment.tags "type" "property") as |property|~}}
+| `{{{property.name}}}` | `{{{join property.types ' \| '}}}` | {{{property.optional}}} | {{{property.description}}} |
+{{/each}}
+
+## Slots 🔌
+| Slot Name | Props | Description |
+| --------- | ------| ------------|
+{{#each (filter firstComment.tags "type" "slot") as |slot|~}}
+| {{{slot.string}}} |
+{{/each}}
+
+## Emits 📢
+| Event Name | Description |
+| ---------- | ------------|
+{{#each (filter firstComment.tags "type" "emits") as |emits|~}}
+| {{{emits.string}}} |
+{{/each}}
+
+## Exposes 📡
+| Name | Description |
+| -----| ------------|
+{{#each (filter firstComment.tags "type" "exposes") as |exposes|~}}
+| {{{exposes.string}}} |
+{{/each}}

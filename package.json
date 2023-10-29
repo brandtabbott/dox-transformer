@@ -1,0 +1,19 @@
+{
+  "name": "@brandtabbott/dox-transformer",
+  "version": "1.0.0",
+  "description": "Transform dox output into file(s) via a transformer",
+  "author": "Brandt A. Abbott",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "dox-transformer": "./bin/dox-transformer.js"
+  },
+  "dependencies": {
+    "commander": "^11.1.0",
+    "dox": "^1.0.0",
+    "glob": "^10.3.10"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3"
+  }
+}
