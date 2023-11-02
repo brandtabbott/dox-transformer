@@ -1,6 +1,6 @@
 {
   "name": "dox-transformer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Transform dox output into file(s) via a transformer",
   "repository": {
     "type": "git",

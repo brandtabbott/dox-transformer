@@ -1,4 +1,4 @@
-#!/usr/bin/env node --no-warnings --experimental-network-imports
+#!/usr/bin/env -S node --no-warnings --experimental-network-imports
 import { Command } from "commander";
 import { parseComments } from "dox";
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
