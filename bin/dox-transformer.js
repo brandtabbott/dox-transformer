@@ -17,6 +17,7 @@ program
   .requiredOption("-f, --files <files>", "Input file(s) glob pattern")
   .requiredOption("-o, --output <directory>", "Output directory")
   .option("-e, --extension <extension>", "Output file extension")
+  .option("-r, --remove <remove>", "Remove string from file path")
   .parse(process.argv);
 
 const options = program.opts();
@@ -40,8 +41,18 @@ const options = program.opts();
       )
         return;
 
+      // Remove desired string from file path
+      file = file.replace(options.remove || "", "");
+
       // Create the output directory if it doesn't exist
-      const fullDirectory = options.output + "/" + path.dirname(file);
+      let fullDirectory = "";
+
+      if (file.split("/").length > 0) {
+        fullDirectory = options.output + "/" + path.dirname(file);
+      } else {
+        fullDirectory = options.output;
+      }
+
       !existsSync(fullDirectory) && mkdirSync(fullDirectory, { recursive: true });
 
       // Write the output file using the transformer
