@@ -7,7 +7,11 @@ import * as pkg from "../package.json" with { type: "json" };
 import * as path from "path";
 import { register } from "node:module";
 import { pathToFileURL } from "node:url";
-register(pathToFileURL("./bin/https-hooks.mjs"));
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const hooksPath = path.join(__dirname, "https-hooks.mjs");
+register(pathToFileURL(hooksPath));
 
 const program = new Command();
 program.version(pkg.version);
