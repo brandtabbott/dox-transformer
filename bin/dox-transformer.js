@@ -1,10 +1,13 @@
-#!/usr/bin/env -S node --no-warnings --experimental-network-imports
+#!/usr/bin/env -S node --no-warnings
 import { Command } from "commander";
 import { parseComments } from "dox";
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
 import * as glob from "glob";
-import * as pkg from "../package.json" assert { type: "json" };
+import * as pkg from "../package.json" with { type: "json" };
 import * as path from "path";
+import { register } from "node:module";
+import { pathToFileURL } from "node:url";
+register(pathToFileURL("./bin/https-hooks.mjs"));
 
 const program = new Command();
 program.version(pkg.version);
